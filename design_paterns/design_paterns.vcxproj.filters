@@ -18,7 +18,16 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="1.observer_pattern.cpp">
+    <ClCompile Include="1.strategy_pattern\1.the_problem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1.strategy_pattern\2.better_with_inheritance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1.strategy_pattern\3.separate_things_change_with_unchange.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1.strategy_pattern\4.character_and_weapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
