@@ -135,6 +135,8 @@
     <ClCompile Include="1.strategy_pattern\2.better_with_inheritance.cpp" />
     <ClCompile Include="1.strategy_pattern\3.separate_things_change_with_unchange.cpp" />
     <ClCompile Include="1.strategy_pattern\4.character_and_weapon.cpp" />
+    <ClCompile Include="2.observer_pattern\1.the_problem.cpp" />
+    <ClCompile Include="2.observer_pattern\2.weather_station.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
