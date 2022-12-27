@@ -7,56 +7,76 @@
 #define WEATHER_STATION_PROBLEM_H
 
 #include <memory>
-
-class CurrentConditionsDisplay
+#include <string>
+namespace weather_station_problem
 {
-public:
-	void update(float p_temperature, float p_humidity, float p_pressure);
-	void display();
+	using String = std::string;
+	class CurrentConditionsDisplay;
+	class StatisticsDisplay;
+	class ForecastDisplay;
+	class WeatherData
+	{
+	public:
+		WeatherData();
 
-private:
-	float m_temperature;
-	float m_humidity;
-};
+		float get_temperature() const;
+		float get_humidity() const;
+		float get_pressure() const;
+		void measurements_changed();
+		void set_measurements(float p_temperature, float p_humidity, float p_pressure);
 
-class ThirdPartyDisplay
-{
-public:
-	void update(float p_temperature, float p_humidity, float p_pressure);
-	void display();
-};
+		void set_current_conditions_display(std::shared_ptr<CurrentConditionsDisplay> &p_display);
+		void set_statistics_display(std::shared_ptr<StatisticsDisplay> &p_display);
+		void set_forecast_display(std::shared_ptr<ForecastDisplay> &p_display);
 
-class StatisticsDisplay
-{
-public:
-	void update(float p_temperature, float p_humidity, float p_pressure);
-	void display();
-};
+	private:
+		float m_temperature;
+		float m_humidity;
+		float m_pressure;
 
-class ForecastDisplay
-{
-public:
-	void update(float p_temperature, float p_humidity, float p_pressure);
-	void display();
-};
+		std::shared_ptr<CurrentConditionsDisplay> m_current_conditions_display;
+		std::shared_ptr<StatisticsDisplay> m_statistics_display;
+		std::shared_ptr<ForecastDisplay> m_forecast_display;
+	};
 
-class WeatherData
-{
-public:
-	float get_temperature() const;
-	float get_humidity() const;
-	float get_pressure() const;
+	class CurrentConditionsDisplay
+	{
+	public:
+		CurrentConditionsDisplay();
+		void update(float p_temperature, float p_humidity, float p_pressure);
+		String display();
 
-	void measurements_changed();
-	void set_measurements(float p_temperature, float p_humidity, float p_pressure);
+	private:
+		float m_temperature;
+		float m_humidity;
+		float m_pressure;
+	};
 
-private:
-	float m_temperature;
-	float m_humidity;
-	float m_pressure;
+	class StatisticsDisplay
+	{
+	public:
+		StatisticsDisplay();
+		void update(float p_temperature, float p_humidity, float p_pressure);
+		String display();
+		int get_num_readings() const;
 
-	std::shared_ptr<CurrentConditionsDisplay> m_current_conditions_display;
-	std::shared_ptr<StatisticsDisplay> m_statistics_display;
-	std::shared_ptr<ForecastDisplay> m_forecast_display;
-};
+	private:
+		float m_min_temperature;
+		float m_max_temperature;
+		float m_temperature_sum;
+		int m_num_readings;
+	};
+
+	class ForecastDisplay
+	{
+	public:
+		ForecastDisplay();
+		void update(float p_temperature, float p_humidity, float p_pressure);
+		String display();
+
+	private:
+		float m_current_pressure;
+		float m_last_pressure;
+	};
+}
 #endif //! WEATHER_STATION_PROBLEM_H
