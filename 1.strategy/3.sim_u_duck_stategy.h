@@ -1,5 +1,5 @@
-#ifndef SIM_U_DUCK_WITH_STRATEGY_PATTERN_H
-#define SIM_U_DUCK_WITH_STRATEGY_PATTERN_H
+#ifndef SIM_U_DUCK_STRATEGY_H
+#define SIM_U_DUCK_STRATEGY_H
 
 /*
  * The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable.
@@ -13,7 +13,7 @@
  */
 #include <memory>
 #include <string>
-namespace duck_strategy_pattern
+namespace sim_u_duck_strategy
 {
 	using String = std::string;
 
@@ -59,27 +59,31 @@ namespace duck_strategy_pattern
 	{
 		String quack() override;
 	};
+
+	class FakeQuack : public IQuackBehavior
+	{
+		String quack() override;
+	};
 	//---------------------------------------------------IQuackBehavior-----------------------------------------------------//
 
 	//---------------------------------------------------Duck-----------------------------------------------------//
 	class Duck
 	{
 	protected:
+		Duck();
 		Duck(std::shared_ptr<IFlyBehavior> p_fly_behavior, std::shared_ptr<IQuackBehavior> p_quack_behavior);
 
 	public:
-		String perform_fly() const;
-		String perform_quack() const;
-
 		std::shared_ptr<IFlyBehavior> &get_fly_behaviour();
-		std::shared_ptr<IFlyBehavior> get_fly_behaviour() const;
 		void set_fly_behaviour(std::shared_ptr<IFlyBehavior> p_fly_behavior);
 
 		std::shared_ptr<IQuackBehavior> get_quack_behaviour();
-		std::shared_ptr<IQuackBehavior> get_quack_behaviour() const;
 		void set_quack_behaviour(std::shared_ptr<IQuackBehavior> p_quack_behavior);
+
 		String swim();
 		virtual String display() = 0;
+		String perform_fly() const;
+		String perform_quack() const;
 
 	private:
 		std::shared_ptr<IFlyBehavior> m_fly_behavior;
@@ -96,20 +100,21 @@ namespace duck_strategy_pattern
 	};
 	//---------------------------------------------------MallardDuck-----------------------------------------------------//
 
-	//---------------------------------------------------RedheadDuck-----------------------------------------------------//
-	class RedheadDuck : public Duck
+	//---------------------------------------------------RedHeadDuck-----------------------------------------------------//
+	class RedHeadDuck : public Duck
 	{
 	public:
-		RedheadDuck();
+		RedHeadDuck();
 		String display() override;
 	};
-	//---------------------------------------------------RedheadDuck-----------------------------------------------------//
+	//---------------------------------------------------RedHeadDuck-----------------------------------------------------//
 
 	//---------------------------------------------------RubberDuck-----------------------------------------------------//
 	class RubberDuck : public Duck
 	{
 	public:
 		RubberDuck();
+		RubberDuck(std::shared_ptr<IFlyBehavior> p_fly_behavior, std::shared_ptr<IQuackBehavior> p_quack_behavior);
 		String display() override;
 	};
 	//---------------------------------------------------RubberDuck-----------------------------------------------------//
@@ -132,4 +137,4 @@ namespace duck_strategy_pattern
 	};
 	//---------------------------------------------------ModelDuck-----------------------------------------------------//
 }
-#endif // !SIM_U_DUCK_WITH_STRATEGY_PATTERN_H
+#endif // !SIM_U_DUCK_STRATEGY_H
