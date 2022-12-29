@@ -5,22 +5,23 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <iomanip>
+#include <sstream>
 
 using namespace weather_station_problem;
 
 //---------------------------------------------------WeatherData-----------------------------------------------------//
 WeatherData::WeatherData() : m_temperature(0.0f), m_humidity(0.0f), m_pressure(0.0f) {}
-void WeatherData::set_current_conditions_display(std::shared_ptr<CurrentConditionsDisplay> &p_display)
+void WeatherData::set_current_conditions_display(std::shared_ptr<CurrentConditionsDisplay> p_display)
 {
     m_current_conditions_display = p_display;
 }
-void WeatherData::set_statistics_display(std::shared_ptr<StatisticsDisplay> &p_display)
+
+void WeatherData::set_statistics_display(std::shared_ptr<StatisticsDisplay> p_display)
 {
     m_statistics_display = p_display;
 }
 
-void WeatherData::set_forecast_display(std::shared_ptr<ForecastDisplay> &p_display)
+void WeatherData::set_forecast_display(std::shared_ptr<ForecastDisplay> p_display)
 {
     m_forecast_display = p_display;
 }

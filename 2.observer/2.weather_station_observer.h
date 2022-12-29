@@ -1,5 +1,5 @@
-#ifndef WEATHER_STATION_OBSERVER_PATTERN_H
-#define WEATHER_STATION_OBSERVER_PATTERN_H
+#ifndef WEATHER_STATION_OBSERVER_H
+#define WEATHER_STATION_OBSERVER_H
 /*
  * The Observer Pattern provides an object design where subjects and observers are loosely coupled:
  *	-	The only thing the subject knows about an observer is that it implements a certain interface.
@@ -63,7 +63,7 @@ namespace weather_station_observer
     };
 
     //---------------------------------------------------CurrentConditionsDisplay-----------------------------------------------------//
-    class CurrentConditionsDisplay : public IObserver, IDisplayElement,  std::enable_shared_from_this<CurrentConditionsDisplay>
+    class CurrentConditionsDisplay : public IObserver, IDisplayElement, std::enable_shared_from_this<CurrentConditionsDisplay>
     {
     public:
         CurrentConditionsDisplay();
@@ -104,7 +104,7 @@ namespace weather_station_observer
     public:
         ForecastDisplay();
         // Inherited via IObserver
-        void update(float p_temperature, float p_humidity, float p_pressure) override;
+        void update(float p_temperature, float, float p_pressure) override;
         // Inherited via IDisplayElement
         String display() override;
 
@@ -120,7 +120,7 @@ namespace weather_station_observer
     public:
         HeatIndexDisplay();
         // Inherited via IObserver
-        void update(float p_temperature, float p_humidity, float p_pressure) override;
+        void update(float p_temperature, float p_humidity, float) override;
         // Inherited via IDisplayElement
         String display() override;
         float compute_heat_index(float p_temperature, float p_humidity);
@@ -131,4 +131,4 @@ namespace weather_station_observer
     //---------------------------------------------------HeatIndexDisplay-----------------------------------------------------//
 }
 
-#endif //! WEATHER_STATION_OBSERVER_PATTERN_H
+#endif //! WEATHER_STATION_OBSERVER_H

@@ -12,6 +12,14 @@ This project implements various design patterns in an individual program. So, to
 g++ -Wall -Wextra main.cpp 1.strategy\3.sim_u_duck_stategy.cpp -I"D:\design_patterns" -I"D:\design_patterns\1.strategy"
 ```
 
+### 2.Observer: 
+
+**_The Observer Pattern_** *defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.*
+
+```
+g++ -Wall -Wextra main.cpp 2.observer\2.weather_station_observer.cpp -I"D:\design_patterns" -I"D:\design_patterns\2.observer"
+```
+
 ### 5.Singleton: 
 
 **_The Singleton Pattern_** *ensures a class has only one instance, and provides a global point of access to it.*

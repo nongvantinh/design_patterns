@@ -25,9 +25,9 @@ namespace weather_station_problem
 		void measurements_changed();
 		void set_measurements(float p_temperature, float p_humidity, float p_pressure);
 
-		void set_current_conditions_display(std::shared_ptr<CurrentConditionsDisplay> &p_display);
-		void set_statistics_display(std::shared_ptr<StatisticsDisplay> &p_display);
-		void set_forecast_display(std::shared_ptr<ForecastDisplay> &p_display);
+		void set_current_conditions_display(std::shared_ptr<CurrentConditionsDisplay> p_display);
+		void set_statistics_display(std::shared_ptr<StatisticsDisplay> p_display);
+		void set_forecast_display(std::shared_ptr<ForecastDisplay> p_display);
 
 	private:
 		float m_temperature;

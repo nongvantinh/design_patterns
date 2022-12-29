@@ -1,13 +1,13 @@
 // Strive for loosely coupled designs between objects that interact
-#include "2.weather_station_observer_pattern.h"
-
+#include "2.weather_station_observer.h"
 
 #include "Catch.hpp"
 
 #include <sstream>
-#include <iomanip>
+#include <sstream>
 using namespace weather_station_observer;
 //---------------------------------------------------WeatherData-----------------------------------------------------//
+WeatherData::WeatherData() : m_observers(), m_temperature(0.0f), m_humidity(0.0f), m_pressure(0.0f) {}
 
 void WeatherData::register_observer(std::shared_ptr<IObserver> p_observer)
 {
@@ -44,7 +44,7 @@ void WeatherData::set_measurements(float p_temperature, float p_humidity, float 
 
 //---------------------------------------------------CurrentConditionsDisplay-----------------------------------------------------//
 CurrentConditionsDisplay::CurrentConditionsDisplay()
-    : m_temperature(0.0f), m_humidity(0.0f), m_pressure(0.0f){}
+    : m_temperature(0.0f), m_humidity(0.0f), m_pressure(0.0f) {}
 
 // Inherited via IObserver
 void CurrentConditionsDisplay::update(float p_temperature, float p_humidity, float p_pressure)
@@ -64,10 +64,10 @@ String CurrentConditionsDisplay::display()
 //---------------------------------------------------CurrentConditionsDisplay-----------------------------------------------------//
 
 //---------------------------------------------------StatisticsDisplay-----------------------------------------------------//
-StatisticsDisplay::StatisticsDisplay() : m_min_temperature(INT_MAX), m_max_temperature(INT_MIN), m_temperature_sum(0.0f), m_num_readings(0){}
+StatisticsDisplay::StatisticsDisplay() : m_min_temperature(INT_MAX), m_max_temperature(INT_MIN), m_temperature_sum(0.0f), m_num_readings(0) {}
 
 // Inherited via IObserver
-void StatisticsDisplay::update(float p_temperature, float p_humidity, float p_pressure)
+void StatisticsDisplay::update(float p_temperature, float, float)
 {
     m_temperature_sum += p_temperature;
     ++m_num_readings;
@@ -100,7 +100,7 @@ ForecastDisplay::ForecastDisplay() : m_current_pressure(29.29f), m_last_pressure
 }
 
 // Inherited via IObserver
-void ForecastDisplay::update(float p_temperature, float p_humidity, float p_pressure)
+void ForecastDisplay::update(float, float, float p_pressure)
 {
     m_last_pressure = m_current_pressure;
     m_current_pressure = p_pressure;
@@ -133,7 +133,7 @@ HeatIndexDisplay::HeatIndexDisplay() : m_heat_index(0.0f)
 }
 
 // Inherited via IObserver
-void HeatIndexDisplay::update(float p_temperature, float p_humidity, float p_pressure)
+void HeatIndexDisplay::update(float p_temperature, float p_humidity, float)
 {
     m_heat_index = compute_heat_index(p_temperature, p_humidity);
 }
@@ -216,9 +216,9 @@ TEST_CASE("ObserverWeatherDataDisplayFixture", "[observer]")
         }
     }
 
-     SECTION("TestHeatIndexDisplay")
-     {
-         weather_data->set_measurements(80, 65, 31.2f);
-         REQUIRE("Heat index is: 82.9554" == heat_index_display->display());
-     }
+    SECTION("TestHeatIndexDisplay")
+    {
+        weather_data->set_measurements(80, 65, 31.2f);
+        REQUIRE("Heat index is: 82.9554" == heat_index_display->display());
+    }
 }
