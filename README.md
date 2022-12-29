@@ -20,6 +20,15 @@ g++ -Wall -Wextra main.cpp 1.strategy\3.sim_u_duck_stategy.cpp -I"D:\design_patt
 g++ -Wall -Wextra main.cpp 8.template_method\barista_template_method.cpp -I"D:\design_patterns" -I"D:\design_patterns\8.template_method"
 ```
 
+### 10. State:
+
+***_The State Pattern_** *allows an object to alter its behavior when its internal state changes. The object will appear to change its class.*
+
+```
+g++ -Wall -Wextra main.cpp .\10.state\1.gumball_machine.cpp -I"D:\design_patterns" -I"D:\design_patterns\10.state"
+g++ -Wall -Wextra main.cpp .\10.state\2.gumball_machine_state.cpp -I"D:\design_patterns" -I"D:\design_patterns\10.state"
+g++ -Wall -Wextra main.cpp .\10.state\2.gumball_machine_state_winner.cpp -I"D:\design_patterns" -I"D:\design_patterns\10.state"
+ ```
 To excute the excutable file:
 
 `.\a.exe --reporter compact`
