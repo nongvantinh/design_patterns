@@ -12,6 +12,15 @@ This project implements various design patterns in an individual program. So, to
 g++ -Wall -Wextra main.cpp 1.strategy\3.sim_u_duck_stategy.cpp -I"D:\design_patterns" -I"D:\design_patterns\1.strategy"
 ```
 
+### 5.Singleton: 
+
+**_The Singleton Pattern_** *ensures a class has only one instance, and provides a global point of access to it.*
+
+```
+g++ -Wall -Wextra main.cpp 5.singleton\chocolate_boiler.cpp -I"D:\design_patterns" -I"D:\design_patterns\5.singleton"
+g++ -Wall -Wextra main.cpp 5.singleton\singleton.cpp -I"D:\design_patterns" -I"D:\design_patterns\5.singleton"
+```
+
 ### 8.Template method: 
 
 ***_The Template Method Pattern_** *defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm’s structure.*
