@@ -37,6 +37,14 @@ g++ -Wall -Wextra main.cpp 5.singleton\singleton.cpp -I"D:\design_patterns" -I"D
 g++ -Wall -Wextra main.cpp 8.template_method\barista_template_method.cpp -I"D:\design_patterns" -I"D:\design_patterns\8.template_method"
 ```
 
+### 9.Iterator: 
+
+**_The Iterator Pattern_** "provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation."
+
+```
+g++ -Wall -Wextra main.cpp 9.iterator\dinermergercafe_iterator.cpp -I"D:\design_patterns" -I"D:\design_patterns\9.iterator"
+```
+
 ### 10. State:
 
 ***_The State Pattern_** *allows an object to alter its behavior when its internal state changes. The object will appear to change its class.*
