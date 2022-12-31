@@ -20,6 +20,25 @@ g++ -Wall -Wextra main.cpp 1.strategy\3.sim_u_duck_stategy.cpp -I"D:\design_patt
 g++ -Wall -Wextra main.cpp 2.observer\2.weather_station_observer.cpp -I"D:\design_patterns" -I"D:\design_patterns\2.observer"
 ```
 
+### 4.Factory: 
+
+**_The Factory Method Pattern_** *defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.*
+
+```
+
+ g++ -Wall -Wextra main.cpp .\4.factory\pizza_store_factory_method.cpp -I"D:\design_patterns" -I"D:\design_patterns\4.factory"
+
+```
+
+**_The Abstract Factory Pattern_** *provides an interface for creating families of related or dependent objects without specifying their concrete classes*.
+
+```
+
+ g++ -Wall -Wextra main.cpp .\4.factory\pizza_store_abstract_factory.cpp -I"D:\design_patterns" -I"D:\design_patterns\4.factory"
+
+
+```
+
 ### 5.Singleton: 
 
 **_The Singleton Pattern_** *ensures a class has only one instance, and provides a global point of access to it.*
