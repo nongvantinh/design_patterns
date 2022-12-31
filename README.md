@@ -82,6 +82,14 @@ g++ -Wall -Wextra main.cpp 8.template_method\barista_template_method.cpp -I"D:\d
 g++ -Wall -Wextra main.cpp 9.iterator\dinermergercafe_iterator.cpp -I"D:\design_patterns" -I"D:\design_patterns\9.iterator"
 ```
 
+### 9.Composite: 
+
+**_The Composite Pattern_** *allows you to compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.*
+
+```
+ g++ -Wall -Wextra main.cpp .\9.composite\menu_composite.cpp -I"D:\design_patterns" -I"D:\design_patterns\9.composite"
+```
+
 ### 10. State:
 
 ***_The State Pattern_** *allows an object to alter its behavior when its internal state changes. The object will appear to change its class.*
