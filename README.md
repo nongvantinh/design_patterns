@@ -20,6 +20,16 @@ g++ -Wall -Wextra main.cpp 1.strategy\3.sim_u_duck_stategy.cpp -I"D:\design_patt
 g++ -Wall -Wextra main.cpp 2.observer\2.weather_station_observer.cpp -I"D:\design_patterns" -I"D:\design_patterns\2.observer"
 ```
 
+### 3.Decorator: 
+
+**_The Decorator Pattern_** *attaches additional responsibilities to an object dynamically. Decorators provide a fl exible alternative to subclassing for extending functionality.*
+
+```
+g++ -Wall -Wextra main.cpp .\3.decorator\pizza_decorator.cpp -I"D:\design_patterns" -I"D:\design_patterns\3.decorator"
+g++ -Wall -Wextra main.cpp .\3.decorator\starbuzz_decorator.cpp -I"D:\design_patterns" -I"D:\design_patterns\3.decorator"
+g++ -Wall -Wextra main.cpp .\3.decorator\starbuzz_with_size_decorator.cpp -I"D:\design_patterns" -I"D:\design_patterns\3.decorator"
+```
+
 ### 4.Factory: 
 
 **_The Factory Method Pattern_** *defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.*
