@@ -48,6 +48,14 @@ g++ -Wall -Wextra main.cpp 5.singleton\chocolate_boiler.cpp -I"D:\design_pattern
 g++ -Wall -Wextra main.cpp 5.singleton\singleton.cpp -I"D:\design_patterns" -I"D:\design_patterns\5.singleton"
 ```
 
+### 7.Facade: 
+
+**_The Facade Pattern_** *provides a unified interface to a set of interfaces in a subsytem. Facade defines a higher level interface that makes the subsystem easier to use.*
+
+```
+g++ -Wall -Wextra main.cpp .\7.facade\home_theather_facade.cpp -I"D:\design_patterns" -I"D:\design_patterns\7.facade"
+```
+
 ### 8.Template method: 
 
 ***_The Template Method Pattern_** *defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm’s structure.*
