@@ -58,6 +58,22 @@ g++ -Wall -Wextra main.cpp 5.singleton\chocolate_boiler.cpp -I"D:\design_pattern
 g++ -Wall -Wextra main.cpp 5.singleton\singleton.cpp -I"D:\design_patterns" -I"D:\design_patterns\5.singleton"
 ```
 
+### 6.Command: 
+
+**_The Command Pattern_** *encapsulates a request as an object, thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.*
+```
+g++ -Wall -Wextra main.cpp .\6.command\remote_wl.cpp -I"D:\design_patterns" -I"D:\design_patterns\6.command"
+g++ -Wall -Wextra main.cpp .\6.command\undo.cpp -I"D:\design_patterns" -I"D:\design_patterns\6.command"
+```
+
+### 7.Adapter: 
+
+**_The Adapter Pattern_** *converts the interface of a class into another interface the clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.*
+
+```
+ g++ -Wall -Wextra main.cpp .\7.adapter\ducks_adapter.cpp -I"D:\design_patterns" -I"D:\design_patterns\7.adapter"
+```
+
 ### 7.Facade: 
 
 **_The Facade Pattern_** *provides a unified interface to a set of interfaces in a subsytem. Facade defines a higher level interface that makes the subsystem easier to use.*
@@ -99,6 +115,17 @@ g++ -Wall -Wextra main.cpp .\10.state\1.gumball_machine.cpp -I"D:\design_pattern
 g++ -Wall -Wextra main.cpp .\10.state\2.gumball_machine_state.cpp -I"D:\design_patterns" -I"D:\design_patterns\10.state"
 g++ -Wall -Wextra main.cpp .\10.state\2.gumball_machine_state_winner.cpp -I"D:\design_patterns" -I"D:\design_patterns\10.state"
  ```
+
+ 
+### 10.Proxy: 
+
+**_The Proxy Pattern_** *provides a surrogate or placeholder for another object to control access to it.*
+
+```
+ g++ -Wall -Wextra main.cpp .\9.composite\menu_composite.cpp -I"D:\design_patterns" -I"D:\design_patterns\9.composite"
+```
+
+
 To excute the excutable file:
 
 `.\a.exe --reporter compact`
