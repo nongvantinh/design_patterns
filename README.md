@@ -4,6 +4,22 @@ This project implements various design patterns in an individual program. So, to
 - g++ version: 12.2.0
 - Windows OS: 10
 
+## Principles
+
+### OO Basics
+
+    - Abstraction
+    - Encapsulation
+    - Polymorphism
+    - Inheritance
+
+### OO Principles
+
+    - Encapsulate what varies
+    - Favor Composition over inheritance
+    - Program to Interfaces, not implementations
+    - Strive for loosely coupled designs between objects that interact
+
 ### 1.Strategy: 
 
 **_The Strategy Pattern_** *defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.*
