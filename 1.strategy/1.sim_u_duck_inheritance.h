@@ -1,5 +1,5 @@
-#ifndef DUCK_INHERITANCE_H
-#define DUCK_INHERITANCE_H
+#ifndef SIM_U_DUCK_INHERITANCE_H
+#define SIM_U_DUCK_INHERITANCE_H
 
 /*
  * When we use inheritance, we generate a lot of duplicate code.
@@ -15,7 +15,6 @@
  *		- Changes can unintentionally affect other ducks.
  */
 
-#include <string>
 #include <string>
 namespace sim_u_duck_inheritance
 {
@@ -61,4 +60,4 @@ namespace sim_u_duck_inheritance
 		String fly() override;
 	};
 }
-#endif // !DUCK_INHERITANCE_H
+#endif // !SIM_U_DUCK_INHERITANCE_H
