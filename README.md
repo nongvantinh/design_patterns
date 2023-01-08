@@ -20,6 +20,11 @@ This project implements various design patterns in an individual program. So, to
     - Program to Interfaces, not implementations
     - Strive for loosely coupled designs between objects that interact
 
+### Design principles:
+    1. Identify the aspects of the application that vary and separate them from what stays the same.
+    2. Program to an interface, not an implementation.
+    3. Favor composition over inheritance.
+
 ### 1.Strategy: 
 
 **_The Strategy Pattern_** *defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.*
