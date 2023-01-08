@@ -21,9 +21,11 @@ This project implements various design patterns in an individual program. So, to
     - Strive for loosely coupled designs between objects that interact
 
 ### Design principles:
-    1. Identify the aspects of the application that vary and separate them from what stays the same.
-    2. Program to an interface, not an implementation.
-    3. Favor composition over inheritance.
+    1. Identify the aspects of the application that **vary** and separate them from what stays the **same**.
+    2. Program to an **interface**, not an **implementation**.
+    3. Favor **composition** over inheritance.
+    4. Strive for **loosely coupled** designs between objects that interact.
+    5. Classes should be **open** for extension, but **closed** for modification.
 
 ### 1.Strategy: 
 
@@ -37,6 +39,20 @@ g++ -Wall -Wextra main.cpp 1.strategy\3.sim_u_duck_stategy.cpp -I"D:\design_patt
 
 **_The Observer Pattern_** *defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.*
 
+When two objects are loosely coupled, they can interact, but have very little knowledge of each other:
+
+The only thing the subject knows about an observer is that it implements a certain interface.
+
+We can add new observers at any time.
+
+We never need to modify the subject to add new types of observers.
+
+We can reuse subjects or observers independently of each other.
+
+Changes to either the subject or an observer will not affect the other.
+
+**Loosely coupled designs allow us to build flexible OO systems that can handle change because they minimize the interdependency between objects.**
+
 ```
 g++ -Wall -Wextra main.cpp 2.observer\2.weather_station_observer.cpp -I"D:\design_patterns" -I"D:\design_patterns\2.observer"
 ```
@@ -44,6 +60,8 @@ g++ -Wall -Wextra main.cpp 2.observer\2.weather_station_observer.cpp -I"D:\desig
 ### 3.Decorator: 
 
 **_The Decorator Pattern_** *attaches additional responsibilities to an object dynamically. Decorators provide a fl exible alternative to subclassing for extending functionality.*
+
+Our goal is to allow classes to be easily extended to incorporate new behavior without modifying existing code. What do we get if we accomplish this? Designs that are resilient to change and flexible enough to take on new functionality to meet changing requirements.
 
 ```
 g++ -Wall -Wextra main.cpp .\3.decorator\pizza_decorator.cpp -I"D:\design_patterns" -I"D:\design_patterns\3.decorator"
