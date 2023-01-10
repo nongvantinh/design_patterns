@@ -26,7 +26,8 @@ This project implements various design patterns in an individual program. So, to
     3. Favor **composition** over inheritance.
     4. Strive for **loosely coupled** designs between objects that interact.
     5. Classes should be **open** for extension, but **closed** for modification.
-
+    6. Depend upon abstractions. Do not depend upon concrete classes.
+    7. Principle of Least Knowledge - talk only to your immediate friends.
 ### 1.Strategy: 
 
 **_The Strategy Pattern_** *defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.*
