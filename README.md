@@ -1,4 +1,6 @@
 # design_paterns
+*A Pattern* is a solution to a problem in a context.
+
 This project implements various design patterns in an individual program. So, to compile it, you need:
 
 - g++ version: 12.2.0
@@ -28,6 +30,8 @@ This project implements various design patterns in an individual program. So, to
     5. Classes should be **open** for extension, but **closed** for modification.
     6. Depend upon abstractions. Do not depend upon concrete classes.
     7. Principle of Least Knowledge - talk only to your immediate friends.
+    8. A class should have only one reason to change.
+    
 ### 1.Strategy: 
 
 **_The Strategy Pattern_** *defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.*
@@ -160,6 +164,15 @@ g++ -Wall -Wextra main.cpp .\10.state\2.gumball_machine_state_winner.cpp -I"D:\d
 ### 10.Proxy: 
 
 **_The Proxy Pattern_** *provides a surrogate or placeholder for another object to control access to it.*
+
+```
+ g++ -Wall -Wextra main.cpp .\9.composite\menu_composite.cpp -I"D:\design_patterns" -I"D:\design_patterns\9.composite"
+```
+
+ 
+### 12.Compound: 
+
+**_The Compound Pattern_** *A Compound Pattern combines two or more patterns into a solution that solves a recurring or general problem.*
 
 ```
  g++ -Wall -Wextra main.cpp .\9.composite\menu_composite.cpp -I"D:\design_patterns" -I"D:\design_patterns\9.composite"
